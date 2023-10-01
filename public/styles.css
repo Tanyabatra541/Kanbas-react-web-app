@@ -1,0 +1,90 @@
+body {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+}
+body * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wd-main-css-heading {
+    color: green;
+    background-color: yellow;
+}
+
+.wd-fg-color-black {
+    color: black;
+}
+
+.wd-fg-color-white {
+    background-color: white;
+}
+
+.wd-fg-color-red {
+    background-color: red;
+}
+
+.wd-fg-color-blue {
+    background-color: blue;
+}
+
+.wd-bg-color-yellow {
+    background-color: yellow;
+}
+
+.wd-bg-color-blue {
+    background-color: blue;
+}
+
+.wd-bg-color-red {
+    background-color: red;
+}
+
+.wd-bg-color-green {
+    background-color: green;
+}
+
+.wd-flex-row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.wd-flex-grow-1 {
+    flex-grow: 1;
+}
+.wd-modules {
+    list-style: none;
+    margin-top: 60px;
+    width: 95%;
+}
+.wd-modules i{
+    margin-right: 15px;
+}
+.wd-modules .wd-submodules i{
+    margin-right: 40px;
+}
+/* .dropdown-menu{
+    display: block !important;
+} */
+.wd-course-status {
+    margin-right: 20px;
+}
+.wd-comingUp a{
+    color: red;
+    margin-left: 5px;
+    text-decoration: none;
+}
+.wd-layout{
+    width: 100%;
+}
+.wd-small-navigation {
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    margin-bottom: 15px;
+    color: white;
+}
+.wd-small-navigation p{
+    padding-top: 10px;
+    position: relative;
+}
