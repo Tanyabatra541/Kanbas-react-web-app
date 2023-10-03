@@ -3,6 +3,8 @@ body {
     padding: 0;
     margin: 0;
     margin-left: 10px;
+    overflow-x: hidden;
+    
 }
 body * {
     font-family: Arial, Helvetica, sans-serif;
@@ -63,6 +65,10 @@ body * {
 .wd-modules .wd-submodules i{
     margin-right: 40px;
 }
+.wd-modules a {
+    color: red;
+    text-decoration: none;
+}
 /* .dropdown-menu{
     display: block !important;
 } */
@@ -88,3 +94,58 @@ body * {
     padding-top: 10px;
     position: relative;
 }
+.wd-small-navigation .wd-menu-sm {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+}
+.wd-small-navigation .wd-glasses-sm {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 520px;
+    color: white;
+}
+.wd-profile-main {
+    margin-left: 200px;
+    margin-top: 20px;
+
+}
+.wd-profile-main i {
+    font-size: 150px;
+}
+.wd-profile-main h1 {
+    margin-top: 20px;
+}
+.wd-editprofile-button{
+    margin-right: 30px;
+}
+.wd-cancel-save {
+    margin-right: 450px;
+}
+.wd-navigation-height {
+    height: 100%;
+}
+.wd-dashboard .card {
+    width: 270px;
+}
+.wd-dashboard-grid .col{
+    width: 270px;
+    margin-top: 30px;
+}
+.wd-assignment-btn {
+    margin-right: 40px;
+}
+.wd-submodules p {
+    margin-left: 70px;
+    font-size: 12px;
+}
+.wd-book{
+    margin-left: -30px;
+    color: green;
+    /* margin-top: 10px; */
+}
+.wd-assignment-editor {
+    margin-left: 40px;
+}
+

@@ -1,5 +1,5 @@
 
-.wd-course-navigation {
+.wd-profile-navigation {
     background-color: white;
     list-style: none;
     padding: 0px;
@@ -7,17 +7,17 @@
     margin-left: 20px;
     
 }
-.wd-course-navigation a {
+.wd-profile-navigation a {
     text-decoration: none;
     color: red;
 }
-.wd-course-navigation li.wd-active {
+.wd-profile-navigation li.wd-active {
     border-left: 2px solid black;
 }
-.wd-course-navigation li.wd-active a {
+.wd-profile-navigation li.wd-active a {
     color: black;
 }
-.wd-course-navigation li {
+.wd-profile-navigation li {
     padding-left: 10px;
     margin-bottom: 5px;
     margin-top: 5px;
