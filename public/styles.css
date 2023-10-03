@@ -147,5 +147,13 @@ body * {
 }
 .wd-assignment-editor {
     margin-left: 40px;
+    
+}
+.wd-assignment-editor .wd-assignment-editor-2 {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.wd-assignment-editor .wd-assignment-editor-2 .row {
+    margin-top: 10px;
 }
 
