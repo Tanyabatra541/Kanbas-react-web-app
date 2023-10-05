@@ -5,6 +5,7 @@
     width: 80px;
     height: 100vh;
     margin:0;
+    position: fixed;
 }
 .wd-kanbas-navigation a{
     text-decoration: none;

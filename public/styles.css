@@ -156,4 +156,51 @@ body * {
 .wd-assignment-editor .wd-assignment-editor-2 .row {
     margin-top: 10px;
 }
+.wd-student-names {
+    margin-left: 60px;
+    margin-top: 40px;
+}
+.wd-assignment-names {
+    margin-left: 600px;
+    margin-top: -63px;
+} 
+.wd-student-names input {
+    width: 400px;
+}
+.wd-assignment-names input {
+    width: 400px;
+}
+.wd-table-grades {
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.table-container {
+    /* width: 100%; */
+    overflow-x: auto;
+    max-width: 1200px;
+    white-space: nowrap;
+}
+.wd-settings-table {
+    margin-left: 30px;
+    /* border-bottom: 1px solid black; */
+}
+.wd-settings-table a {
+    text-decoration: none;
+    color: red;
+    
+}
+.wd-course-details {
+    margin-left: 110px;
+    margin-top: 30px;
+    max-width: 500px;
+    text-align: left;
+}
+.wd-settings-table .wd-settings-table-active {
+    color: black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 5px;
+}
+
 
