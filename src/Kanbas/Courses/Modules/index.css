@@ -1,0 +1,22 @@
+#modules {
+    display: flex;
+    flex-flow: column nowrap;
+
+    margin-top: 4vh;
+}
+
+#module_list {
+    width: 40vw;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #d3d7da;
+
+        background-color: #f5f5f5;
+        border-radius: unset;
+        margin-bottom: 5vh;
+        padding: 20px 10px;
+        width: 100%;
+    }
+}

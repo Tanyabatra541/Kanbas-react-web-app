@@ -1,0 +1,31 @@
+:root {
+    --kanbas-navigation-width: 80px;
+}
+
+.wd-kanbas-navigation .wd-icon {
+    font-size: 2em;
+    color: red;
+}
+
+.wd-kanbas-navigation {
+    height: 100vh;
+    width: 80px;
+    background-color: black;
+    display: flex;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: var(--kanbas-navigation-width);
+    height: 100vh;
+
+    position: fixed;
+    z-index: 1;
+}
+
+.wd-kanbas-navigation .list-group-item {
+    width: var(--kanbas-navigation-width);
+    font-size: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+}

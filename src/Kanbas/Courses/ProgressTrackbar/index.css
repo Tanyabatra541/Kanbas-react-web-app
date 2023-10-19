@@ -1,0 +1,26 @@
+#button_bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    margin: 1vh 0vh;
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px #d3d7da solid;
+        border-radius: 5px;
+
+        background-color: #f5f5f5;
+        
+        margin-left: 10px;
+        padding: 8px 10px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    #module_add {
+        color: white;
+        background-color: #C8102E;
+    }
+}

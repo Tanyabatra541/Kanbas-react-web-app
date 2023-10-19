@@ -1,0 +1,16 @@
+.wd-dashboard {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.wd-dashboard .wd-dashboard-line{
+    width: 1350px;
+}
+.wd-dashboard .wd-published-courses-line {
+    width: 320px;
+}
+.wd-dashboard-grid {
+    width: 1200px;
+}
+.wd-dashboard-grid  .card{
+    width: 270px;
+}

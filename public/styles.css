@@ -1,0 +1,206 @@
+body {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+    overflow-x: hidden;
+    
+}
+body * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wd-main-css-heading {
+    color: green;
+    background-color: yellow;
+}
+
+.wd-fg-color-black {
+    color: black;
+}
+
+.wd-fg-color-white {
+    background-color: white;
+}
+
+.wd-fg-color-red {
+    background-color: red;
+}
+
+.wd-fg-color-blue {
+    background-color: blue;
+}
+
+.wd-bg-color-yellow {
+    background-color: yellow;
+}
+
+.wd-bg-color-blue {
+    background-color: blue;
+}
+
+.wd-bg-color-red {
+    background-color: red;
+}
+
+.wd-bg-color-green {
+    background-color: green;
+}
+
+.wd-flex-row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.wd-flex-grow-1 {
+    flex-grow: 1;
+}
+.wd-modules {
+    list-style: none;
+    margin-top: 60px;
+    width: 95%;
+}
+.wd-modules i{
+    margin-right: 15px;
+}
+.wd-modules .wd-submodules i{
+    margin-right: 40px;
+}
+.wd-modules a {
+    color: red;
+    text-decoration: none;
+}
+/* .dropdown-menu{
+    display: block !important;
+} */
+.wd-course-status {
+    margin-right: 20px;
+}
+.wd-comingUp a{
+    color: red;
+    margin-left: 5px;
+    text-decoration: none;
+}
+.wd-layout{
+    width: 100%;
+}
+.wd-small-navigation {
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    margin-bottom: 15px;
+    color: white;
+}
+.wd-small-navigation p{
+    padding-top: 10px;
+    position: relative;
+}
+.wd-small-navigation .wd-menu-sm {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+}
+.wd-small-navigation .wd-glasses-sm {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 520px;
+    color: white;
+}
+.wd-profile-main {
+    margin-left: 200px;
+    margin-top: 20px;
+
+}
+.wd-profile-main i {
+    font-size: 150px;
+}
+.wd-profile-main h1 {
+    margin-top: 20px;
+}
+.wd-editprofile-button{
+    margin-right: 30px;
+}
+.wd-cancel-save {
+    margin-right: 450px;
+}
+.wd-navigation-height {
+    height: 100%;
+}
+.wd-dashboard .card {
+    width: 270px;
+}
+.wd-dashboard-grid .col{
+    width: 270px;
+    margin-top: 30px;
+}
+.wd-assignment-btn {
+    margin-right: 40px;
+}
+.wd-submodules p {
+    margin-left: 70px;
+    font-size: 12px;
+}
+.wd-book{
+    margin-left: -30px;
+    color: green;
+    /* margin-top: 10px; */
+}
+.wd-assignment-editor {
+    margin-left: 40px;
+    
+}
+.wd-assignment-editor .wd-assignment-editor-2 {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.wd-assignment-editor .wd-assignment-editor-2 .row {
+    margin-top: 10px;
+}
+.wd-student-names {
+    margin-left: 60px;
+    margin-top: 40px;
+}
+.wd-assignment-names {
+    margin-left: 600px;
+    margin-top: -63px;
+} 
+.wd-student-names input {
+    width: 400px;
+}
+.wd-assignment-names input {
+    width: 400px;
+}
+.wd-table-grades {
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.table-container {
+    /* width: 100%; */
+    overflow-x: auto;
+    max-width: 1200px;
+    white-space: nowrap;
+}
+.wd-settings-table {
+    margin-left: 30px;
+    /* border-bottom: 1px solid black; */
+}
+.wd-settings-table a {
+    text-decoration: none;
+    color: red;
+    
+}
+.wd-course-details {
+    margin-left: 110px;
+    margin-top: 30px;
+    max-width: 500px;
+    text-align: left;
+}
+.wd-settings-table .wd-settings-table-active {
+    color: black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 5px;
+}
+
+
