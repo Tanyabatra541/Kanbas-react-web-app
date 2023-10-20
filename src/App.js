@@ -8,10 +8,10 @@ function App() {
   return (
     <HashRouter>
       <div>
-        {/* <h1>React Labs</h1> */}
-        {/* <Link to="/Hello">Hello World</Link><br />
+        {/* <h1>React Labs</h1>
+        <Link to="/Hello">Hello World</Link><br />
         <Link to="/Labs">Labs</Link><br />
-        <Link to="/Kanbas">Kanbas</Link><br /> */}
+        <Link to="/Kanbas">Kanbas</Link><br />  */}
         <Routes>
           <Route path="/" element={<Navigate to="Kanbas" />}></Route>
           <Route path="/Hello" element={<HelloWorld />}></Route>

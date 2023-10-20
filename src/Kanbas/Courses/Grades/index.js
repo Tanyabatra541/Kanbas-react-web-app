@@ -1,12 +1,13 @@
 import db from "../../Database";
 import { useParams } from "react-router-dom";
+import "./index.css";
 function Grades() {
     const { courseId } = useParams();
     const assignments = db.assignments.filter((assignment) => assignment.course === courseId);
     const enrollments = db.enrollments.filter((enrollment) => enrollment.course === courseId);
     return (
         <div>
-            <div className="wd-grades-top">
+            <div>
                 <select>
                     <option>Gradebook</option>
                 </select>

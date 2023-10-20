@@ -31,7 +31,7 @@ const Breadcrumb = () => {
           );
         })}
       </ol>
-      <button>
+      <button className='wd-student-view'>
         <GrInspect />&nbsp;&nbsp;Student View
       </button>
     </nav>
