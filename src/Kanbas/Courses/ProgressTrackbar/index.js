@@ -18,7 +18,7 @@ const ProgressTrackbar = () => {
             <button id='module_add'>
                 <AiOutlinePlus /> Module
             </button>
-            <button>
+            <button className='wd-buttons'>
                 <BsThreeDotsVertical />
             </button>
         </div>
