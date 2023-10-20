@@ -24,7 +24,7 @@ function ModuleList() {
                 &nbsp;<IoMdArrowDropright />
                 &nbsp;{module.name}
               </span>
-              <span>
+              <span className="wd-module-icons">
                 <BsCheckCircleFill style={{ color: "green" }} />
                 <IoMdArrowDropdown />&nbsp;
                 <AiOutlinePlus />&nbsp;&nbsp;&nbsp;&nbsp;
