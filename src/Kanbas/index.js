@@ -6,6 +6,7 @@ import Courses from "./Courses";
 import Calendar from "./Calendar";
 import { Navigate } from "react-router-dom";
 import './index.css';
+import Nav from "../Nav";
 
 function Kanbas() {
    return (
