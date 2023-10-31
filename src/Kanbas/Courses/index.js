@@ -11,7 +11,7 @@ import AssignmentEditor from "./Assignments/AssignmentEditor";
 
 import '../index.css';
 
-const Courses = () => {
+const Courses = ({ courses }) => {
     return (
         <div>
             <div>
