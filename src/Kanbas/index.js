@@ -6,11 +6,10 @@ import Courses from "./Courses";
 import Calendar from "./Calendar";
 import { Navigate } from "react-router-dom";
 import './index.css';
-import Nav from "../Nav";
 import db from "./Database";
 import { useState } from "react";
-// import store from "./store";
-// import { Provider } from "react-redux";
+import store from "./store";
+import { Provider } from "react-redux";
 
 function Kanbas() {
    const [courses, setCourses] = useState(db.courses);
@@ -37,7 +36,7 @@ function Kanbas() {
    };
 
    return (
-      // <Provider store={store}>
+      <Provider store={store}>
          <div className="d-flex">
             <KanbasNavigation />
             <div className="content">
@@ -56,7 +55,7 @@ function Kanbas() {
                </Routes>
             </div>
          </div>
-      // </Provider>
+      </Provider>
    );
 }
 export default Kanbas;
