@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 import { BsCheckCircleFill, BsThreeDotsVertical } from "react-icons/bs";
 import './index.css';
 import { useSelector, useDispatch } from "react-redux";
-// import assignmentsReducer from "/Users/tanyabatra/Desktop/2023/Fall 2023/Web Development/Kanbas/Kanbas-react-web-app/src/Kanbas/Courses/Assignments/assignmentsReducer.js" ;
+// import assignmentsReducer from "/Users/tanyabatra/Desktop/2023/Fall 2023/Web Development/Kanbas/Kanbas-react-web-app/../Courses/Assignments/assignmentsReducer" ;
 
 import {
     updateAssignment,
-} from "/Users/tanyabatra/Desktop/2023/Fall 2023/Web Development/Kanbas/Kanbas-react-web-app/src/Kanbas/Courses/Assignments/assignmentsReducer.js";
+} from "../assignmentsReducer";
 
 
 const AssignmentEditor = () => {
