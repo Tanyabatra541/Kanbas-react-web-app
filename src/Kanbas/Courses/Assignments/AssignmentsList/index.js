@@ -5,24 +5,36 @@ import { PiDotsSixVerticalBold, PiNotePencilBold } from 'react-icons/pi';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { AiOutlinePlus } from 'react-icons/ai';
 import './index.css';
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  setAssignment,
+} from "/Users/tanyabatra/Desktop/2023/Fall 2023/Web Development/Kanbas/Kanbas-react-web-app/src/Kanbas/Courses/Assignments/assignmentsReducer.js";
+
 
 function AssignmentItem({ assignment }) {
-  const { courseId } = useParams();
+
+  const { courseID } = useParams();
   const dateSplit = assignment.endDate.split("-");
   const endDate = new Date(dateSplit[0], dateSplit[1] - 1, dateSplit[2], 0, 0, 0, 0);
+  const dispatch = useDispatch();
 
   return (
-    <Link
-      key={assignment._id}
-      to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-      className="list-group-item assignment-item"
-    >
+    <div className="list-group-item assignment-item">
       <div style={{ display: "flex", flexFlow: "row nowrap" }}>
         <PiDotsSixVerticalBold />&nbsp;
         <PiNotePencilBold style={{ color: "#68a179" }} />&nbsp;&nbsp;&nbsp;&nbsp;
         <div id="assignment-details">
-          <div>{assignment.name}</div>
+          <Link
+            key={assignment._id}
+            to={`/Kanbas/Courses/${courseID}/Assignments/${assignment._id}`}
+            >
+            <div>{assignment.name}</div>
+          </Link>
           <div>
             <span style={{ color: "#C8102E" }}>Multiple Modules</span>
             &nbsp; | Due {endDate.toLocaleString('en-us', { month: 'short', day: 'numeric' })} at 11:59pm
@@ -31,10 +43,11 @@ function AssignmentItem({ assignment }) {
         </div>
       </div>
       <div>
+        <button onClick={() => dispatch(deleteAssignment(assignment._id))}>Delete</button>&nbsp;&nbsp;
         <BsCheckCircleFill style={{ color: "green" }} />
         &nbsp;&nbsp;<BsThreeDotsVertical />
       </div>
-    </Link>
+    </div>
   );
 }
 
@@ -42,14 +55,22 @@ function AssignmentsList() {
   const { courseID } = useParams();
   const assignments = useSelector((state) => state.assignmentsReducer.assignments);
   const courseAssignments = assignments.filter((assignment) => assignment.courseId === courseID);
-
+  const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+  const dispatch = useDispatch();
+  console.log(assignments,courseAssignments.filter((assignment) => assignment.courseId === courseID));
   return (
     <div id="assignments-container">
+      
       <header>
         <div style={{ fontWeight: "bold" }}>
           <PiDotsSixVerticalBold />&nbsp;
           <IoMdArrowDropdown />&nbsp;
-          ASSIGNMENTS
+          ASSIGNMENTS<br/> <br/> 
+          &nbsp;&nbsp;&nbsp;&nbsp;<input value={module.name}
+          onChange={(e) => dispatch(setAssignment({ ...assignment, name: e.target.value }))}/>
+        <br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<button onClick={() => dispatch(addAssignment({ 
+        ...assignment, courseId: courseID }))}>Add</button>
         </div>
         <div>
           <span>40% of Total</span>&nbsp;
@@ -58,8 +79,9 @@ function AssignmentsList() {
         </div>
       </header>
       <div id="assignments-list" className="list-group">
-        {courseAssignments.map((assignment) => (
-          <AssignmentItem key={assignment._id} assignment={assignment} />
+        {courseAssignments.filter((assignment) => assignment.courseId === courseID)
+          .map((assignment, index) => (
+          <AssignmentItem key={index} assignment={assignment} />
         ))}
       </div>
     </div>

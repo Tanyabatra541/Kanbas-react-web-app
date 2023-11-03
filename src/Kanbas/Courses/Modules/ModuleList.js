@@ -6,38 +6,22 @@ import { PiDotsSixVerticalBold } from 'react-icons/pi';
 import { IoMdArrowDropright, IoMdArrowDropdown } from 'react-icons/io';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { BsThreeDotsVertical } from 'react-icons/bs';
+import { useSelector, useDispatch } from "react-redux";
 
 import './index.css';
 
+import {
+  addModule,
+  deleteModule,
+  updateModule,
+  setModule,
+} from "./modulesReducer";
+
 function ModuleList() {
   const { courseID } = useParams();
-  const [modules, setModules] = useState(db.modules);
-  const [module, setModule] = useState({
-    name: "New Module",
-    description: "New Description",
-    course: courseID,
-  });
-  const addModule = (module) => {
-    setModules([
-      { ...module, _id: new Date().getTime().toString() },
-      ...modules,
-    ]);
-  };
-  const deleteModule = (moduleId) => {
-    setModules(modules.filter(
-      (module) => module._id !== moduleId));
-  };
-  const updateModule = () => {
-    setModules(
-      modules.map((m) => {
-        if (m._id === module._id) {
-          return module;
-        } else {
-          return m;
-        }
-      })
-    );
-  }
+  const modules = useSelector((state) => state.modulesReducer.modules);
+  const module = useSelector((state) => state.modulesReducer.module);
+  const dispatch = useDispatch();
 
 
 
@@ -47,20 +31,17 @@ function ModuleList() {
       <li className="list-group-item">
 
         <input value={module.name}
-          onChange={(e) => setModule({
-            ...module, name: e.target.value
-          })}
+          onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))}
         />
         <br />
         <textarea value={module.description}
-          onChange={(e) => setModule({
-            ...module, description: e.target.value
-          })}
+          onChange={(e) =>  dispatch(setModule({ ...module, description: e.target.value }))
+        }
         /><br />
-        <button onClick={() => { addModule(module) }}>
+        <button onClick={() => dispatch(addModule({ ...module, course: courseID }))}>
           Add
         </button>
-        <button onClick={updateModule}>
+        <button onClick={() => dispatch(updateModule(module))}>
           Update
         </button>
 
@@ -86,12 +67,12 @@ function ModuleList() {
                 <AiOutlinePlus />&nbsp;&nbsp;&nbsp;&nbsp;
                 <BsThreeDotsVertical />
                 <button
-                  onClick={(event) => { setModule(module); }}>
+                  onClick={() => dispatch(setModule(module))}>
                   Edit
                 </button>
 
                 <button
-                  onClick={() => deleteModule(module._id)}>
+                  onClick={() => dispatch(deleteModule(module._id))}>
                   Delete
                 </button>
               </span>
