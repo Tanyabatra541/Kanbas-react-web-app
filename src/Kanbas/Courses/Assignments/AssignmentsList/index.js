@@ -5,13 +5,11 @@ import { PiDotsSixVerticalBold, PiNotePencilBold } from 'react-icons/pi';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { AiOutlinePlus } from 'react-icons/ai';
 import './index.css';
-// import { useSelector } from "react-redux";
 import { useSelector, useDispatch } from "react-redux";
 
 import {
   addAssignment,
   deleteAssignment,
-  updateAssignment,
   setAssignment,
 } from "/Users/tanyabatra/Desktop/2023/Fall 2023/Web Development/Kanbas/Kanbas-react-web-app/src/Kanbas/Courses/Assignments/assignmentsReducer.js";
 

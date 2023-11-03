@@ -2,16 +2,12 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { BsCheckCircleFill, BsThreeDotsVertical } from "react-icons/bs";
-import db from "../../../Database";
 import './index.css';
 import { useSelector, useDispatch } from "react-redux";
 // import assignmentsReducer from "/Users/tanyabatra/Desktop/2023/Fall 2023/Web Development/Kanbas/Kanbas-react-web-app/src/Kanbas/Courses/Assignments/assignmentsReducer.js" ;
 
 import {
-    addAssignment,
-    deleteAssignment,
     updateAssignment,
-    setAssignment,
 } from "/Users/tanyabatra/Desktop/2023/Fall 2023/Web Development/Kanbas/Kanbas-react-web-app/src/Kanbas/Courses/Assignments/assignmentsReducer.js";
 
 
