@@ -11,7 +11,7 @@ import DateStateVariable from "./DateStateVariable";
 import ObjectStateVariable from "./ObjectStateVariable";
 import ArrayStateVariable from "./ArrayStateVariable";
 import ParentStateComponent from "./ParentStateComponent";
-import ReduxExamples from "/Users/tanyabatra/Desktop/2023/Fall 2023/Web Development/Kanbas/Kanbas-react-web-app/src/Labs/a4/ReduxExamples/index.js";
+import ReduxExamples from "./ReduxExamples";
 import CounterRedux from "./ReduxExamples/CounterRedux";
 import AddRedux from "./ReduxExamples/AddRedux";
 import TodoList from "./todos/TodoList";
