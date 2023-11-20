@@ -13,7 +13,10 @@ import { Provider } from "react-redux";
 
 function Kanbas() {
    const [courses, setCourses] = useState([]);
-   const URL = "https://kanbas-node-server-app-fjd6.onrender.com/api/courses";
+   // const URL = "https://kanbas-node-server-app-fjd6.onrender.com/api/courses";
+
+   const API_BASE = process.env.REACT_APP_API_BASE;
+   const URL = `${API_BASE}/courses`;
 
 
    const [course, setCourse] = useState({
@@ -22,11 +25,12 @@ function Kanbas() {
    });
    const addNewCourse = async () => {
       const response = await axios.post(URL, course);
-      setCourses([ 
+      setCourses([
          ...courses,
          response.data
-    ]);};
-  
+      ]);
+   };
+
    const findAllCourses = async () => {
       const response = await axios.get(URL);
       console.log(response.data);
@@ -39,15 +43,15 @@ function Kanbas() {
       console.log(courseId);
       const response = await axios.delete(
          `${URL}/${courseId}`
-       );
-   
+      );
+
       setCourses(courses.filter((course) => course._id !== courseId));
    };
    const updateCourse = async () => {
       const response = await axios.put(
          `${URL}/${course._id}`,
          course
-       );
+      );
       setCourses(
          courses.map((c) => {
             if (c._id === course._id) {
