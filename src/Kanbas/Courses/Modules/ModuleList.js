@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import db from "../../Database";
 import { BsCheckCircleFill } from 'react-icons/bs';
@@ -15,10 +15,40 @@ import {
   deleteModule,
   updateModule,
   setModule,
+  setModules,
 } from "./modulesReducer";
+import * as client from "./client";
+
+import { findModulesForCourse, createModule } from "./client";
 
 function ModuleList() {
+  const handleDeleteModule = (moduleId) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
+
+
   const { courseID } = useParams();
+  useEffect(() => {
+    findModulesForCourse(courseID)
+      .then((modules) =>
+        dispatch(setModules(modules))
+      );
+  }, [courseID]);
+  const handleAddModule = () => {
+    createModule(courseID, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
+
+
+
   const modules = useSelector((state) => state.modulesReducer.modules);
   const module = useSelector((state) => state.modulesReducer.module);
   const dispatch = useDispatch();
@@ -35,13 +65,13 @@ function ModuleList() {
         />
         <br />
         <textarea value={module.description}
-          onChange={(e) =>  dispatch(setModule({ ...module, description: e.target.value }))
-        }
+          onChange={(e) => dispatch(setModule({ ...module, description: e.target.value }))
+          }
         /><br />
-        <button onClick={() => dispatch(addModule({ ...module, course: courseID }))}>
+        <button onClick={handleAddModule}>
           Add
         </button>
-        <button onClick={() => dispatch(updateModule(module))}>
+        <button onClick= {handleUpdateModule}>
           Update
         </button>
 
@@ -72,7 +102,7 @@ function ModuleList() {
                 </button>
 
                 <button
-                  onClick={() => dispatch(deleteModule(module._id))}>
+                  onClick={() => handleDeleteModule(module._id)}>
                   Delete
                 </button>
               </span>

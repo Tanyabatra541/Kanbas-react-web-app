@@ -9,9 +9,10 @@ import Grades from "./Grades";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 
 
+
 import '../index.css';
 
-const Courses = ({ courses }) => {
+const Courses = ({}) => {
     return (
         <div>
             <div>
@@ -28,7 +29,7 @@ const Courses = ({ courses }) => {
                     <Routes>
                         <Route path="/" element={<Navigate to="Home" />} />
                         <Route path="Home" element={<Home />} />
-                        <Route path="Modules" element={<Modules/>} />
+                        <Route path="Modules" element={<Modules />} />
                         <Route path="Assignments" element={<Assignments />} />
                         <Route
                             path="Assignments/:assignmentId"

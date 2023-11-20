@@ -1,13 +1,25 @@
 import { Link, useParams, useLocation } from "react-router-dom";
 import "./index.css";
 import BreadCrumb from "../../BreadCrumb";
-// import db from "../Database";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const CourseNavigation = () => {
+  const URL = "http://localhost:4000/api/courses";
   const links = ["Home", "Modules", "Piazza", "Zoom Meetings", "Assignments", "Quizzes", "Grades", "People",
     "Panopto Video", "Discussions", "Announcements", "Pages", "Files", "Rubrics", "Outcomes", "Collaborations", "Syllabus", "Settings"];
   const { courseID } = useParams();
   const { pathname } = useLocation();
+  const [course, setCourse] = useState({});
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(
+      `${URL}/${courseId}`
+    );
+    setCourse(response.data);
+  };
+  useEffect(() => {
+    findCourseById(courseID);
+  }, [courseID]);
   
   return (
     <div>

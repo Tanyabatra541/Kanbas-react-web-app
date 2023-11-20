@@ -34,6 +34,7 @@ function Dashboard(
 
               <button
                 onClick={(event) => {
+                  console.log(course._id);
                   event.preventDefault();
                   deleteCourse(course._id);
                 }}>

@@ -6,6 +6,9 @@ import { IoMdArrowDropdown } from 'react-icons/io';
 import { AiOutlinePlus } from 'react-icons/ai';
 import './index.css';
 import { useSelector, useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 
 import {
   addAssignment,
@@ -14,12 +17,23 @@ import {
 } from "../assignmentsReducer";
 
 
-function AssignmentItem({ assignment }) {
-
+function AssignmentItem({assignment }) {
+  const [course, setCourse] = useState({});
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(
+      `${URL}/${courseId}`
+    );
+    setCourse(response.data);
+  };
   const { courseID } = useParams();
   const dateSplit = assignment.endDate.split("-");
   const endDate = new Date(dateSplit[0], dateSplit[1] - 1, dateSplit[2], 0, 0, 0, 0);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    findCourseById(courseID);
+  }, [courseID]);
+
 
   return (
     <div className="list-group-item assignment-item">
