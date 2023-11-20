@@ -13,7 +13,8 @@ import { Provider } from "react-redux";
 
 function Kanbas() {
    const [courses, setCourses] = useState([]);
-   const URL = "http://localhost:4000/api/courses";
+   const URL = "https://kanbas-node-server-app-fjd6.onrender.com/api/courses";
+
 
    const [course, setCourse] = useState({
       name: "New Course", number: "New Number",
