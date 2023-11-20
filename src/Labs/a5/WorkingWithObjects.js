@@ -23,6 +23,18 @@ function WorkingWithObjects() {
     fetchAssignment();
   }, []);
 
+  const [isCompleted, setIsCompleted] = useState(false);
+
+  const handleCheckboxChange = (e) => {
+    setIsCompleted(e.target.checked);
+  };
+
+  const handleUpdateStatus = async () => {
+    const response = await axios.get(`${URL}/completed/${isCompleted}`);
+    setAssignment(response.data);
+  };
+
+
   return (
     <div>
       <h3>Working With Objects</h3>
@@ -73,6 +85,23 @@ function WorkingWithObjects() {
         value={assignment.score}
         className="form-control mb-2 w-75"
         type="text" />
+      <br />
+      <a
+        href="http://localhost:4000/a5/assignment/completed"
+        className="btn btn-primary me-2">
+        Get Status of Completion?
+      </a><br />
+      <input
+        type="checkbox"
+        checked={isCompleted}
+        onChange={handleCheckboxChange}
+      />{" "}
+      &nbsp;&nbsp;
+      <label>Completed</label>
+      <br />
+      <button onClick={handleUpdateStatus} className="w-100 btn btn-primary mb-2">
+        Update Completion Status to: {isCompleted.toString()}
+      </button>
     </div>
   );
 }

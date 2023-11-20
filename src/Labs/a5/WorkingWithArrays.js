@@ -48,7 +48,25 @@ function WorkingWithArrays() {
             t.id === todo.id ? todo : t)));
         setTodo({});
     };
+    const updateDescription = async () => {
+        const response = await axios.put(
+            `${API}/${todo.id}/description/${todo.description}`, todo);
+        fetchTodos();
+        setTodos(todos.map((t) => (
+            t.id === todo.id ? todo : t)));
+        setTodo({});
+    };
 
+    const updateCompleted = async () => {
+        const updatedTodo = { ...todo, completed: !todo.completed };
+        const response = await axios.put(
+            `${API}/${todo.id}/completed/${updatedTodo.completed}`,
+            updatedTodo
+        );
+        fetchTodos();
+        setTodos(todos.map((t) => (t.id === todo.id ? response.data : t)));
+        setTodo({});
+    };
 
     useEffect(() => {
         fetchTodos();
@@ -153,6 +171,12 @@ function WorkingWithArrays() {
             <button onClick={updateTodo} className="btn btn-success mb-2 w-100">
                 Update Todo
             </button>
+            <button onClick={updateDescription} className="btn btn-success mb-2 w-100">
+                Update description
+            </button>
+            <button onClick={updateCompleted} className="btn btn-success mb-2 w-100">
+                Update completed
+            </button>
             <button onClick={createTodo}
                 className="btn btn-primary mb-2 w-100">
                 Create Todo
@@ -173,8 +197,15 @@ function WorkingWithArrays() {
                         </button>
                         <input
                             checked={todo.completed}
-                            type="checkbox" readOnly
-                        />&nbsp;&nbsp;
+                            type="checkbox"
+                            onChange={(e) =>
+                                setTodo({
+                                    ...todo,
+                                    completed: e.target.checked,
+                                })
+                            }
+                        />
+                        &nbsp;&nbsp;
                         {todo.title}
                         <p>{todo.description}</p>
                         <p>{todo.due}</p>
