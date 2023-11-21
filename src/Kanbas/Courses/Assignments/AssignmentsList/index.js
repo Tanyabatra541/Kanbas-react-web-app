@@ -18,6 +18,7 @@ import {
 
 
 function AssignmentItem({assignment }) {
+  const URL = "https://kanbas-node-server-app-fjd6.onrender.com/api/courses"
   const [course, setCourse] = useState({});
   const findCourseById = async (courseId) => {
     const response = await axios.get(
