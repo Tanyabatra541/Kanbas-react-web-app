@@ -18,9 +18,8 @@ function Account() {
   };
   const signout = async () => {
     await client.signout();
-    navigate("/Kanbas/signin");
+    navigate("/project/signin");
   };
-
   useEffect(() => {
     if (id) {
       findUserById(id);
@@ -101,7 +100,7 @@ function Account() {
             Save
           </button>
           <button onClick={signout} className="btn btn-danger w-100">Signout</button>
-          <Link to="/Kanbas/admin/users" className="btn btn-warning w-100">
+          <Link to="/project/admin/users" className="btn btn-warning w-100">
             Users
           </Link>
         </div>

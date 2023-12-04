@@ -10,10 +10,11 @@ import './index.css';
 import { useState, useEffect } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
-import Signin from "../users/signin";
-import Account from "../users/account";
-import UserTable from "../users/table";
-import Signup from "../users/signup";
+import Signin from "../project/users/signin";
+import Account from "../project/users/account";
+import UserTable from "../project/users/table";
+import Signup from "../project/users/signup";
+// import Project from "../project";
 
 function Kanbas() {
    const [courses, setCourses] = useState([]);
@@ -85,11 +86,13 @@ function Kanbas() {
                      updateCourse={updateCourse} />} />
                   <Route path="/Courses/:courseID/*" element={<Courses courses={courses} />} />
                   <Route path="/Calendar" element={<Calendar />} />
-                  <Route path="/signin" element={<Signin />} />
-                  <Route path="/account" element={<Account />} />
-                  <Route path="/admin/users" element={<UserTable />} />
-                  <Route path="/account/:id" element={<Account />} />
+                  {/* <Route path="/project/*" element={<Project />} /> */}
+                  {/* <Route path="/signin" element={<Signin />} /> */}
+                  {/* <Route path="/account" element={<Account />} /> */}
+                  {/* <Route path="/admin/users" element={<UserTable />} /> */}
+                  {/* <Route path="/account/:id" element={<Account />} /> */}
                   <Route path="/signup" element={<Signup />} />
+                  
                </Routes>
             </div>
          </div>
