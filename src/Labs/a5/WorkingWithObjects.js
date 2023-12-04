@@ -9,7 +9,8 @@ function WorkingWithObjects() {
     completed: false,
     score: 0,
   });
-  const URL = "https://kanbas-node-server-app-fjd6.onrender.com/a5/assignment";
+  // const URL = "https://kanbas-node-server-app-fjd6.onrender.com/a5/assignment";
+  const URL = "http://localhost:4000/a5/assignment";
   const fetchAssignment = async () => {
     const response = await axios.get(`${URL}`);
     setAssignment(response.data);
@@ -56,18 +57,32 @@ function WorkingWithObjects() {
       </button>
 
       <h4>Retrieving Objects</h4>
-      <a href="https://kanbas-node-server-app-fjd6.onrender.com/a5/assignment"
+      {/* <a href="https://kanbas-node-server-app-fjd6.onrender.com/a5/assignment"
+        className="btn btn-primary me-2">
+        Get Assignment
+      </a> */}
+      <a href="http://localhost:4000/a5/assignment"
         className="btn btn-primary me-2">
         Get Assignment
       </a>
       <h4>Retrieving Properties</h4>
-      <a
+      {/* <a
         href="https://kanbas-node-server-app-fjd6.onrender.com/a5/assignment/title"
         className="btn btn-primary me-2">
         Get Title
-      </a><br /><br />
+      </a><br /><br /> */}
       <a
+        href="http://localhost:4000/a5/assignment/title"
+        className="btn btn-primary me-2">
+        Get Title
+      </a><br /><br />
+      {/* <a
         href="https://kanbas-node-server-app-fjd6.onrender.com/a5/assignment/score"
+        className="btn btn-primary me-2">
+        Get Score
+      </a><br /><br /> */}
+      <a
+        href="http://localhost:4000/a5/assignment/score"
         className="btn btn-primary me-2">
         Get Score
       </a><br /><br />
@@ -86,8 +101,13 @@ function WorkingWithObjects() {
         className="form-control mb-2 w-75"
         type="text" />
       <br />
-      <a
+      {/* <a
         href="https://kanbas-node-server-app-fjd6.onrender.com/a5/assignment/completed"
+        className="btn btn-primary me-2">
+        Get Status of Completion?
+      </a><br /> */}
+      <a
+        href="http://localhost:4000/a5/assignment/completed"
         className="btn btn-primary me-2">
         Get Status of Completion?
       </a><br />

@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import KanbasNavigation from "./KanbasNavigation";
-import Account from "./Account";
+// import Account from "./Account";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
 import Calendar from "./Calendar";
@@ -10,14 +10,18 @@ import './index.css';
 import { useState, useEffect } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
+import Signin from "../users/signin";
+import Account from "../users/account";
+import UserTable from "../users/table";
+import Signup from "../users/signup";
 
 function Kanbas() {
    const [courses, setCourses] = useState([]);
    // const URL = "https://kanbas-node-server-app-fjd6.onrender.com/api/courses";
+   const URL = "http://localhost:4000/api/courses";
 
-   const API_BASE = process.env.REACT_APP_API_BASE;
-   const URL = `${API_BASE}/courses`;
-
+   // const API_BASE = process.env.REACT_APP_API_BASE;
+   // const URL = `${API_BASE}/courses`;
 
    const [course, setCourse] = useState({
       name: "New Course", number: "New Number",
@@ -70,7 +74,8 @@ function Kanbas() {
             <div className="content">
                <Routes>
                   <Route path="/" element={<Navigate to="Dashboard" />} />
-                  <Route path="/Account" element={<Account />} />
+                  {/* <Route path="/signin" element={<Signin />} /> */}
+                  {/* <Route path="/Account" element={<Account />} /> */}
                   <Route path="/Dashboard" element={<Dashboard
                      courses={courses}
                      course={course}
@@ -80,6 +85,11 @@ function Kanbas() {
                      updateCourse={updateCourse} />} />
                   <Route path="/Courses/:courseID/*" element={<Courses courses={courses} />} />
                   <Route path="/Calendar" element={<Calendar />} />
+                  <Route path="/signin" element={<Signin />} />
+                  <Route path="/account" element={<Account />} />
+                  <Route path="/admin/users" element={<UserTable />} />
+                  <Route path="/account/:id" element={<Account />} />
+                  <Route path="/signup" element={<Signup />} />
                </Routes>
             </div>
          </div>

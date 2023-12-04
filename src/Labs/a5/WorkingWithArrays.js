@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 function WorkingWithArrays() {
-    const API = "https://kanbas-node-server-app-fjd6.onrender.com/a5/todos";
+    // const API = "https://kanbas-node-server-app-fjd6.onrender.com/a5/todos";
+    const API = "http://localhost:4000/a5/todos";
     const [todo, setTodo] = useState({
         id: 1,
         title: "NodeJS Assignment",
@@ -48,12 +49,22 @@ function WorkingWithArrays() {
             t.id === todo.id ? todo : t)));
         setTodo({});
     };
+    // const updateDescription = async () => {
+    //     const response = await axios.put(
+    //         `${API}/${todo.id}/description/${todo.description}`, todo);
+    //     setTodos(todos.map((t) => (
+    //         t.id === todo.id ? todo : t)));
+    //     fetchTodos();
+    //     setTodo({});
+    // };
+
     const updateDescription = async () => {
         const response = await axios.put(
-            `${API}/${todo.id}/description/${todo.description}`, todo);
-        fetchTodos();
-        setTodos(todos.map((t) => (
-            t.id === todo.id ? todo : t)));
+            `${API}/${todo.id}/description/${encodeURIComponent(todo.description)}`,
+            todo
+        );
+        fetchTodos(); 
+        setTodos(todos.map((t) => (t.id === todo.id ? response.data : t)));
         setTodo({});
     };
 
@@ -174,12 +185,13 @@ function WorkingWithArrays() {
             <button onClick={updateDescription} className="btn btn-success mb-2 w-100">
                 Update description
             </button>
+            {/* <a
+                href={`${API}/${todo.id}/description/${todo.description}`}
+                className="btn btn-success mb-2 w-100" >
+                Update Description to {todo.description}
+            </a> */}
             <button onClick={updateCompleted} className="btn btn-success mb-2 w-100">
                 Update completed
-            </button>
-            <button onClick={createTodo}
-                className="btn btn-primary mb-2 w-100">
-                Create Todo
             </button>
             <ul className="list-group">
                 {todos.map((todo) => (
