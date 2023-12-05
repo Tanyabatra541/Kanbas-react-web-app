@@ -1,9 +1,13 @@
 import * as client from "./client";
 import { useState, useEffect } from "react";
 import { useNavigate, Link, useParams } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 function Account() {
-  const { id } = useParams();
+  // const { id } = useParams();
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
   const [account, setAccount] = useState(null);
   const navigate = useNavigate();
 
