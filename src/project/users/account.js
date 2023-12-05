@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, Link, useParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
-function Account({signout}) {
+function Account() {
   // const { id } = useParams();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -25,10 +25,10 @@ function Account({signout}) {
     await client.updateUser(account);
   };
 
-  // const signout = async () => {
-  //   await client.signout();
-  //   navigate("/project/signin");
-  // };
+  const signout = async () => {
+    await client.signout();
+    navigate("/project/signin");
+  };
 
   useEffect(() => {
     if (id) {

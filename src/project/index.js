@@ -9,24 +9,6 @@ import * as client from "./users/client";
 
 function Project() {
 
-    const [userId,setUserId] = useState("");
-
-    const navigate = useNavigate();
-    const signin = async (credentials) => {
-        console.log(credentials);
-        const response = await client.signin(credentials);
-        // navigate("/project/account");
-        setUserId(response._id)
-        // const userId = String(response._id);
-        navigate(`/project/account?id=${userId}`);
-      };
-
-      const signout = async () => {
-        setUserId("");
-        await client.signout();
-        navigate("/project/signin");
-      };
-
   return (
     <div className="container-fluid">
       <div className="row">
@@ -52,10 +34,10 @@ function Project() {
         <div className="col-10">
           <Routes>
             <Route path="/" element={<Navigate to="/project/home" />} />
-            <Route path="/signin" element={<Signin signin={signin}/>} />
+            <Route path="/signin" element={<Signin/>} />
             <Route path="/admin/users" element={<UserTable />} />
-            <Route path="/account" element={<Account signout={signout} />} />
-            <Route path="/account/:id" element={<Account signout={signout}/>} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/account/:id" element={<Account/>} />
             <Route path="/signup" element={<Signup />} />
           </Routes>
         </div>

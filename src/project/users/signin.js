@@ -2,19 +2,19 @@ import * as client from "./client";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Signin({ signin }) {
+function Signin() {
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
   });
   const navigate = useNavigate();
 
-  // const signin = async () => {
-  //   const response = await client.signin(credentials);
-  //   // navigate("/project/account");
-  //   const userId = String(response._id);
-  //   navigate(`/project/account?id=${userId}`);
-  // };
+  const signin = async () => {
+    const response = await client.signin(credentials);
+    // navigate("/project/account");
+    const userId = String(response._id);
+    navigate(`/project/account?id=${userId}`);
+  };
 
   return (
     <div className="container mt-5">
@@ -61,7 +61,7 @@ function Signin({ signin }) {
                 <button
                   type="button"
                   className="btn btn-primary w-100"
-                  onClick={() => signin(credentials)}
+                  onClick={signin}
                 >
                   Sign In
                 </button>
